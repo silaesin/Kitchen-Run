@@ -10,6 +10,7 @@ Bu proje üniversite **final ödevi** kapsamında geliştirilmiştir.
 
 ## 🕹️ Kontroller
 - A / D veya ← / → : Hareket
+- ↓ (Aşağı ok) : Eğil / özel hareket
 - Space : Zıpla
 
 ## 🛠️ Teknoloji
