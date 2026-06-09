@@ -149,9 +149,14 @@ public class GameManager : MonoBehaviour
                 YaziGuncelle(kazanmaYazisi, "CONGRATULATIONS!\nYOUR CAKE IS READY. ENJOY!");
                 if (kekResmi != null) kekResmi.SetActive(true); 
             }
-            else
+            else if (levelNumarasi==1)
             {
-                YaziGuncelle(kazanmaYazisi, "CONGRATULATIONS!\nLEVEL COMPLETED.");
+                YaziGuncelle(kazanmaYazisi, "CONGRATULATIONS!\nLEVEL 1 COMPLETED.");
+                if (kekResmi != null) kekResmi.SetActive(false); 
+            }
+            else if (levelNumarasi==2)
+            {
+                YaziGuncelle(kazanmaYazisi, "CONGRATULATIONS!\nLEVEL 2 COMPLETED.");
                 if (kekResmi != null) kekResmi.SetActive(false); 
             }
         }
