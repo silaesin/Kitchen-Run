@@ -65,6 +65,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+
+
+    public void IlkLeveleDon()
+    {
+        SceneManager.LoadScene(0);
+    }
     void HedefSayiyiBelirle()
     {
         toplanmasiGerekenSayi = 0; 
@@ -92,7 +98,7 @@ public class GameManager : MonoBehaviour
         if (kalanSure > 0)
         {
             kalanSure -= Time.deltaTime;
-            YaziGuncelle(sureObjesi, "Süre: " + Mathf.CeilToInt(kalanSure).ToString());
+            YaziGuncelle(sureObjesi, "Time: " + Mathf.CeilToInt(kalanSure).ToString());
         }
         else
         {
@@ -140,12 +146,12 @@ public class GameManager : MonoBehaviour
             
             if (levelNumarasi == 3)
             {
-                YaziGuncelle(kazanmaYazisi, "TEBRİKLER!\nKEKİN PİŞTİ, AFİYET OLSUN!");
+                YaziGuncelle(kazanmaYazisi, "CONGRATULATIONS!\nYOUR CAKE IS READY. ENJOY!");
                 if (kekResmi != null) kekResmi.SetActive(true); 
             }
             else
             {
-                YaziGuncelle(kazanmaYazisi, "TEBRİKLER!\nBU AŞAMA TAMAMLANDI.");
+                YaziGuncelle(kazanmaYazisi, "CONGRATULATIONS!\nLEVEL COMPLETED.");
                 if (kekResmi != null) kekResmi.SetActive(false); 
             }
         }
@@ -154,16 +160,16 @@ public class GameManager : MonoBehaviour
             if(kaybetmePaneli != null) kaybetmePaneli.SetActive(true);
 
             if (neden == "SÜRE")
-                YaziGuncelle(kaybetmeYazisi, "SÜRE DOLDU!\nDAHA HIZLI OLMALISIN.");
+                YaziGuncelle(kaybetmeYazisi, "TIME IS UP!\nYOU NEED TO BE FASTER.");
             else if (neden == "HAK")
-                YaziGuncelle(kaybetmeYazisi, "YANLIŞ MALZEME!\nÇOK FAZLA HATA YAPTIN.");
+                YaziGuncelle(kaybetmeYazisi, "WRONG INGREDIENT!\nTOO MANY MISTAKES");
         }
     }
 
     void EkranlariGuncelle()
     {
-        YaziGuncelle(puanObjesi, "Malzemeler: " + mevcutPuan + " / " + toplanmasiGerekenSayi);
-        YaziGuncelle(hakObjesi, "Hak: " + hakSayisi);
+        YaziGuncelle(puanObjesi, "Ingredients: " + mevcutPuan + " / " + toplanmasiGerekenSayi);
+        YaziGuncelle(hakObjesi, "Lives: " + hakSayisi);
         YaziGuncelle(levelObjesi, "Level: " + levelNumarasi);
     }
 
